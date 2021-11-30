@@ -1,0 +1,50 @@
+REPRODUCIBILITY DETAILS:
+
+	In this folder, you can find the code to reproduce the results. The code has been developed in Java (JDK 11), using the IDE IntelliJ IDEA Community Version (https://www.jetbrains.com/idea/). We recommend to directly open the project in IntelliJ to automatically solve the code dependencies (Fastutil Library 8.5.4, Apache Spark 2.12:3.1.1, and Apache Math3:3.3) and to directly run the classes. Run IntelliJ, click "Open" and select the CASPITA folder. Under the IntelliJ menu "Run/Edit Configuration.../Program arguments:" it is possible to directly insert the parameters of the classes, separated with spaces. For the comparison with HYPA, follow the instruction available in "https://github.com/tlarock/hypa" to download it. For HYPA, we used the "rpy2" implementation. Let us note that this version of CASPITA mines over and under represented paths simultaneously to speed up the execution of the tests but the FWER guarantees are valid individually for the over and under represented paths.
+
+	
+	
+	DATASET GENERATION:
+	
+		We provided the code to generate all the datasets used in our experimental evaluation starting from public data available online, which links are provided in the paper. In addition, we already provided the following datasets: BIKE, WIKI, BIKE10, BIKE20, NEWBIKE in the "data/" folder. To put the downloaded data to generate the datasets, create an "original/" folder in the main folder of the project. 
+
+		BIKE: download from "https://bikeshare.metro.net/about/data/" the 2019 data, i.e., 2019 Q1, 2019 Q2, 2019 Q3, and 2019 Q4. Decompress and put them in the "original/" folder, renaming them as "2019q1.csv", ..., "2019q4.csv". Run the class "Bike" with parameter "2019", which generates and stores the "2019_BIKE.csv" dataset in the "data/" folder.
+
+		WIKI: download from "https://snap.stanford.edu/data/wikispeedia.html" the "wikispeedia_paths-and-graph.tar.gz" data. Decompress and put the file "paths_finished.tsv" in the "original/" folder. Run the class "Wiki" which generates and stores the "wiki.csv" dataset in the "data/" folder.
+
+		BIKE10 and BIKE20: with the BIKE dataset already generated, run the class "Bike_10_20" with parameter "10" or "20" which generates and stores the "2019_BIKE_10.csv" or "2019_BIKE_20.csv" dataset, respectively, in the "data/" folder.
+
+		FLIGHT: download from "https://www.transtats.bts.gov/tables.asp?gnoyr_VQ=FLM&flf_gnoyr_anzr=g_QOEO_Pbhcba" the "DB1BCoupon" 2019 data, i.e., 2019 Q1, 2019 Q2, 2019 Q3, and 2019 Q4, selecting "ItinID", "SeqNum", "OriginAirportID", and "DestAirportID". Decompress and put them in the "original/" folder, renaming them as "mark_q1_2019_C.csv", ..., "mark_q4_2019_C.csv". Run the class "Flight" which generates and stores the "2019_flight.csv" dataset in the "data/" folder.   
+
+		NEWBIKE: same procedure of BIKE, but considering the 2020 data. Run the class "Bike" with parameter "2020", which generates and stores the "2020_BIKE.csv" dataset in the "data/" folder.
+
+
+	
+	SECTION "GENERATION STRATEGIES COMPARISION":
+
+		TOG STRATEGY: run the class "Caspita_TOG_MC" with parameters "2019_BIKE_10", "1000", "100000", "8" (or the number of parallelization you desire), and "0.05". It stores the statistically significant paths mined in a file in the "res/TOG_MC/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes the statistics of the execution (parameters, corrected significance threshold, number of reported paths, and execution time). Use "2019_BIKE_20" as first parameter to change dataset.
+
+		POG STRATEGY MC: run the class "Caspita_POG_MC" with parameters "2019_BIKE_10", "1000", "100000", "8" (or the number of parallelization you desire), and "0.05". It stores the statistically significant paths mined in a file in the "res/POG_MC/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes the statistics of the execution (parameters, corrected significance threshold, number of reported paths, and execution time). Use "2019_BIKE_20" as first parameter to change dataset.
+
+		POG STRATEGY BINOMIAL: run the class "Caspita_POG_Bin" with parameters "2019_BIKE_10", "1000", and "0.05". It stores the statistically significant paths mined in a file in the "res/POG_Bin/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes the statistics of the execution (parameters, corrected significance threshold, number of reported paths, and execution time). Use "2019_BIKE_20" as first parameter to change dataset. 
+
+		P-VALUES COMPARISON: run the class "TestPValues" with parameters "2019_BIKE_10", "10000", and "8" (or the number of parallelization you desire). It stores the binomial p-value and MC p-value of each path in a file in the "res/PV/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes "MAX BIN" and "MIN BIN", respectively, the maximum and the minimum, over all parameters k and h and over all paths, of the maximum and of the minimum absolute difference of a binomial p-value and a MC p-value of the same path. It also writes "MAX MC" and "MIN MC", respectively, the maximum and the minimum, over all parameters k and h and over all paths, of the maximum and of the minimum absolute difference of two MC p-values of the same path. Use "2019_BIKE_20" as first parameter to change dataset, and "100000" or "1000000" as second parameter to change the number M of datasets for the MC estimates.
+
+
+
+	SECTION "RESULTS FOR POG STRATEGY WITH BINOMIAL APPROXIMATION":
+	
+		FALSE POSITIVES GUARANTEES: run the class "Artificial Test" with parameters "2019_BIKE_10" and "100". It stores the statistically significant paths (which are false positives) mined in a file in the "res/Artificial/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes "FWER", the estimated FWER obtained with the selected starting dataset and the used value of P, considering the experiments described in the paper. Use "2019_BIKE_20" as first parameter to change dataset, and "1000" or "10000" as second parameter to change the number P of datasets for the WY method.
+
+		FALSE POSITIVES GUARANTEES HYPA: run the class "RandomDatasetHYPA" with parameter "2019_BIKE_10". It stores the random datasets for HYPA in the "ArtificialDataHYPA/" folder for each combination of parameters k and h. Then, run the python3 script "hypaArtificial.py" with parameter "2019_BIKE_10" which stores the anomalous paths (which are false positives) mined in a file in the "res/HYPA/" folder for each combination of parameters k and h. In this phase, we always used the anomaly threshold = 0.05 for HYPA, we filter the paths using a different threshold to evaluate the FWER in the following step. Run the class "ArtificialTestHYPA" with parameters "2019_BIKE_10" and "0.05". At standard output, it writes "FWER", the estimated FWER obtained with the selected starting dataset and the used value of the anomaly threshold, considering the experiments described in the paper. Use "2019_BIKE_20" as first parameter to change dataset (for all the classes and the python script), and "0.001" or "0.00001" as second parameter (for the class "ArtificialTestHYPA") to change the anomaly threshold. 
+
+		POG STRATEGY BINOMIAL WITH REAL DATASETS: run the class "Caspita_POG_Bin" with parameters "2019_BIKE", "100", and "0.05". It stores the statistically significant paths mined in a file in the "res/POG_Bin/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes the statistics of the execution (parameters, corrected significance threshold, number of reported paths, and execution time). Use "2019_flight" or "wiki" as first parameter to change dataset.
+
+
+	
+	SECTION "BIKE ANALYSIS":
+	
+		POG STRATEGY BINOMIAL WITH DIFFERENT REAL DATASETS: run the class "Caspita_POG_Bin_Multi" with parameters "2020_BIKE", "2019_BIKE", "100", "0.05". It stores the statistically significant paths mined in a file in the "res/POG_Bin_Diff/" folder for each combination of parameters k and h, and both over (OV) and under (UN) represented paths. At standard output, it writes the statistics of the execution (parameters, corrected significance threshold, number of reported paths, and execution time).
+
+
+

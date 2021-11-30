@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a99b730-5ec4-4850-b86d-d6c4c94e6eb6" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1sx95z5bsahISnXJQzNbMNHt5li" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="caspita" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.4275862" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ArtificialTestHYPA">
+    <configuration name="ArtificialTest" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ArtificialTest" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_10 100" />
+      <option name="VM_PARAMETERS" value="-Xmx5G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArtificialTestHYPA" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ArtificialTestHYPA" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_10 0.05" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Bike" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Bike" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Bike_10_20" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Bike_10_20" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="20" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Caspita_POG_Bin" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Caspita_POG_Bin" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_20 1000 0.05" />
+      <option name="VM_PARAMETERS" value="-Xmx5G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Caspita_POG_Bin_Multi" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Caspita_POG_Bin_Multi" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2020_BIKE 2019_BIKE 100 0.05" />
+      <option name="VM_PARAMETERS" value="-Xmx5G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Caspita_POG_MC" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Caspita_POG_MC" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_10 1000 100000 8 0.05" />
+      <option name="VM_PARAMETERS" value="-Xmx5G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Caspita_TOG_MC" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Caspita_TOG_MC" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_10 1000 100000 8 0.05" />
+      <option name="VM_PARAMETERS" value="-Xmx5G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Flight" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Flight" />
+      <module name="Caspita" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomDatasetHYPA" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="RandomDatasetHYPA" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestPValues" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="TestPValues" />
+      <module name="Caspita" />
+      <option name="PROGRAM_PARAMETERS" value="2019_BIKE_10 100000 8" />
+      <option name="VM_PARAMETERS" value="-Xmx5G" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Wiki" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Wiki" />
+      <module name="Caspita" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Caspita_POG_Bin" />
+      <item itemvalue="Application.Caspita_TOG_MC" />
+      <item itemvalue="Application.TestPValues" />
+      <item itemvalue="Application.ArtificialTest" />
+      <item itemvalue="Application.RandomDatasetHYPA" />
+      <item itemvalue="Application.ArtificialTestHYPA" />
+      <item itemvalue="Application.Caspita_POG_Bin_Multi" />
+      <item itemvalue="Application.Caspita_POG_MC" />
+      <item itemvalue="Application.Wiki" />
+      <item itemvalue="Application.Bike_10_20" />
+      <item itemvalue="Application.Bike" />
+      <item itemvalue="Application.Flight" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a99b730-5ec4-4850-b86d-d6c4c94e6eb6" name="Default Changelist" comment="" />
+      <created>1621803193832</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621803193832</updated>
+    </task>
+    <servers />
+  </component>
+</project>
