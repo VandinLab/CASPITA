@@ -9,12 +9,13 @@ The package contains the following folders:
 *	src/: contains the source code of CASPITA which considers the Binomial distribution to approximate the p-values
 *	lib/: contains the jar of the libraries
 *	reproducibility: contains the implementation of all the versions of CASPITA and the code and the explanations to reproduce all the results shown in the paper.
+
 In addition, it contains:
 *	an extended version of our [paper](CASPITA_Extended.pdf)
-*	a [jar file](CASPITA.jar) to directly execute our algorithm CASPITA
+*	a [jar file](CASPITA.jar) to directly execute our algorithm CASPITA.
 
 ## Usage of CASPITA
-We provide the source code and an executable jar file of the version of CASPITA which uses the Binomial distribution to approximate the p-values of the paths, which resulted as best version from our experimental evaluation shown in the paper
+We provide the source code and an executable jar file of the version of CASPITA which uses the Binomial distribution to approximate the p-values of the paths, which resulted as best version from our experimental evaluation shown in the paper.
 
 ### Compile
 These are the instructions to compile the code (from the CASPITA folder):
@@ -24,7 +25,8 @@ javac -cp "./lib/*" src/Caspita_POG_Bin.java
 ```
 
 ### Dataset Format
-The input file must contain each path in a different line and each vertex must be separated with a space from the following one
+The input file must contain each path in a different line and each vertex must be separated with a space from the following one.
+
 E.g.:
 ```
 1 2 3 4
@@ -67,12 +69,12 @@ java -Xmx20G -cp "../lib/*:." Caspita_POG_Bin ../data/BIKE.txt 100 2 1 0.05 OVER
 ```
 
 ### Execute from Jar File
-These are the instructions to execute the CASPITA from the JARR file (from the CASPITA folder). You can mine over or under represented paths, or both simultaneously. Let us note that the version of CASPITA which mines over and under represented paths simultaneously is provided to speed up the execution if one is interested in both types of paths but the FWER guarantees are valid individually for the over and under represented paths.
+These are the instructions to execute the CASPITA from the JAR file (from the CASPITA folder). You can mine over or under represented paths, or both simultaneously. Let us note that the version of CASPITA which mines over and under represented paths simultaneously is provided to speed up the execution if one is interested in both types of paths but the FWER guarantees are valid individually for the over and under represented paths.
 
 ```
 java -XmxRG -jar CASPITA.jar inputFile P k h FWER BOTH/OVER/UNDER outputFile1 [outputFile2]
 ```
-The parameters are the same shown above for the execution from compiled code.
+The parameters are the same shown above for the execution from the compiled code.
 
 
 ##  Reproducibility
